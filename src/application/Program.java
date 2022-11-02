@@ -9,6 +9,7 @@
 package application;
 
 import entities.Contract;
+import services.ContractService;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -35,6 +36,9 @@ public class Program {
         System.out.println("Número de parcelas: ");
         int n = sc.nextInt();
 
+        ContractService contractService = new ContractService(null);
+
+        contractService.processContract(obj, n);
 
         sc.close();
     }
